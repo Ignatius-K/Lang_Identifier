@@ -23,6 +23,5 @@ class Model:
 
     @classmethod
     def filter_response(cls, response):
-
         filtered_response = ModelResponse(lang="lug")
         return filtered_response
