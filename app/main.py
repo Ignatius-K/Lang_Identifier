@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Local Libraries
+from app.routers.detect import router as detect_router
 
 
 app = FastAPI(
@@ -31,3 +32,9 @@ def welcome():
     return {
         "message": "Hello world"
     }
+
+
+app.include_router(
+    router=detect_router,
+    prefix="/detect"
+)
