@@ -1,7 +1,6 @@
 name: API Test
 
 on:
-  push:
   pull_request:
     branches:
       - main
