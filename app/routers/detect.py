@@ -1,9 +1,10 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel
 
 # local libraries
-from app.model_interface import Model
+from model.model import Model
 
+model = Model()
 router = APIRouter()
 
 
@@ -13,20 +14,20 @@ class RequestBody(BaseModel):
 
 class ResponseBody(BaseModel):
     lang: str
-    acc: float | None
+    # acc: float | None
 
 
 @router.post("/")
 async def detect(req_body: RequestBody):
-
-    model_response = Model.detect_language(text=req_body.text)
+    model_response = str(model.detect_language(text=req_body.text))
 
     return ResponseBody(
-        lang=model_response.lang,
-        acc=model_response.acc
+        lang=model_response,
+        # acc=model_response.acc
     )
 
 
 __all__ = [
     "router"
 ]
+

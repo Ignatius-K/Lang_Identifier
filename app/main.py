@@ -5,7 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 # Local Libraries
 from app.routers.detect import router as detect_router
 
-
 app = FastAPI(
     title="Language Identifier",
     description="""
