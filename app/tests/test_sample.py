@@ -1,2 +1,2 @@
 def test_funct():
-    assert 1 == 1
+    assert 2 != 1
