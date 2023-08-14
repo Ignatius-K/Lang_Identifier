@@ -1,5 +1,5 @@
 # Language Identifier API
-![Testing](Passing)
+![Testing](https://github.com/Ignatius-K/Language_Identifier/blob/main/.github/workflows/api_test.yml/badge.svg)
 
 To run the API locally,
 
