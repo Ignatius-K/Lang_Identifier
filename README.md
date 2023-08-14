@@ -1,4 +1,5 @@
 # Language Identifier API
+![Testing](Passing)
 
 To run the API locally,
 
