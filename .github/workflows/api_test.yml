@@ -39,5 +39,12 @@ jobs:
       - name: Generate Coverage Badge
         run: coverage-badge -o coverage.svg
 
-      - name: Coverage badge to repo
-        run: cp /home/runner/work/Language_Identifier/Language_Identifier/app/coverage.svg ../
+      - name: Commit badge
+        run: |
+          git config --global user.email "ignatiuskisekka@gmail.com"
+          git config --global user.name "Ignatius K"
+          git add coverage.svg
+          git commit -m "Add: coverage badge"
+          git remote set-url origin https://${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+          git push
+          
