@@ -31,4 +31,7 @@ jobs:
           pip install -r ../test_requirements.txt
 
       - name: Test App
-        run: pytest
+        run: coverage run -m pytest
+
+      - name: Generate Coverage Badge
+        run: coverage -o coverage.svg
