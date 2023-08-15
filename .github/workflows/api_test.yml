@@ -43,7 +43,7 @@ jobs:
         run: |
           git config --global user.email "ignatiuskisekka@gmail.com"
           git config --global user.name "Ignatius K"
-          git add coverage.svg
+          git add coverage_2.svg
           git commit -m "Add: coverage badge"
           git remote set-url origin https://${{ secrets.TOKEN }}@github.com/${{ github.repository }}
           git push
