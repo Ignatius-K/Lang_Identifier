@@ -36,6 +36,10 @@ jobs:
       - name: Test App
         run: |
           cd app/
+          if [ -f coverage.svg ]; then
+            echo "Deleting existing coverage file"
+            rm coverage.svg
+          fi
           coverage run -m pytest
           coverage-badge -o ../coverage.svg
 
