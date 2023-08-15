@@ -42,6 +42,7 @@ jobs:
           fi
           coverage run -m pytest
           coverage-badge -o ../coverage.svg
+          echo " " >> ../coverage.svg 
 
       - name: Commit badge
         run: |
@@ -51,4 +52,5 @@ jobs:
           git commit -m "Add: coverage badge"
           git remote set-url origin https://${{ secrets.TOKEN }}@github.com/${{ github.repository }}
           git push
-          
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
