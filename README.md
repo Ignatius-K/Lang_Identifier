@@ -1,6 +1,6 @@
 # Language Identifier API
 ![Test Status](https://github.com/Ignatius-K/Language_Identifier/actions/workflows/api_test.yml/badge.svg)
-![Coverage Status]
+![Coverage Status](https://github.com/Ignatius-K/Language_Identifier/blob/main/coverage.svg)
 
 To run the API locally,
 
