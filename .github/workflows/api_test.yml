@@ -37,7 +37,7 @@ jobs:
         run: |
           cd app/
           coverage run -m pytest
-          coverage-badge -o coverage.svg
+          coverage-badge -o coverage_2.svg
 
       - name: Commit badge
         run: |
