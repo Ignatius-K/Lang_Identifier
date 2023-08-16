@@ -2,9 +2,8 @@ pytest
 coverage==6.5.0
 coveralls==3.3.1
 httpx==0.24.1
-fastapi==0.101.0
-fastapi==0.101.0
-pydantic==2.1.1
-tensorflow~=2.13.0
+fastapi
+pydantic
+tensorflow
 numpy
 
