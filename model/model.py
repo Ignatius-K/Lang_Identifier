@@ -1,31 +1,44 @@
-import os
 import pickle
-import numpy as np
+import joblib
 
-# local
-from model.text_preprocess import Preprocessor
-
-PATH_TO_MODEL = "./model/model_1.pickle"
+PATH_TO_MODEL = "./model"
 
 
 class Model:
 
     def __init__(self):
-        self.model_prediction = None
-        self.preprocessor = Preprocessor()
+        self.text = None
+        self.model = None
+        self.predicted: str | None = None
 
-        with open(PATH_TO_MODEL, "rb") as _model:
-            self.model = pickle.load(_model)
+    def load_model(self, model_name):
+        model_path = f"{PATH_TO_MODEL}/{model_name}"
+        
+        try:
+            with open(model_path, 'rb') as _model:
+                self.model = pickle.load(_model)
+
+        except pickle.UnpicklingError as e:
+            self.model = joblib.load(model_path)
+
+        finally:
+            pass
 
     def detect_language(self, text):
-        padded_seq_text = self.preprocessor.preprocess(text)
-        self.predict(padded_seq_text)
-        return self.preprocess_model_result()
+        self.text = text
+        self.predict()
+        return self.predicted
 
-    def predict(self, padded_seq_text):
-        self.model_prediction = self.model.predict(padded_seq_text)
+    def preprocess_text(self):
+        ...
 
-    def preprocess_model_result(self):
-        return np.argmax(self.model_prediction)
+    def predict(self):
+        self.predicted = self.model.predict([self.text])[0]
 
+
+if __name__ == '__main__':
+    PATH_TO_MODEL = "../model"
+    model = Model()
+    model.load_model('n_bayes.pkl')
+    print(model.detect_language('hello today'))
 
