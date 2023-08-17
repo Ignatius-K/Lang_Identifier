@@ -5,7 +5,8 @@ from pydantic import BaseModel
 from model.model import Model
 
 model = Model()
-model.load_model('n_bayes.pkl')
+model.load_model('n_bayes_c.pkl')
+
 router = APIRouter()
 
 

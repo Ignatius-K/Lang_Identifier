@@ -5,7 +5,7 @@ model = Model()
 
 def test_load_model():
     assert model.model is None
-    model.load_model('n_bayes.pkl')
+    model.load_model('n_bayes_t.pkl')
     assert model.model is not None
 
 
