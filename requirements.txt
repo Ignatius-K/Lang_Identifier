@@ -5,6 +5,5 @@ httpx==0.24.1
 fastapi
 pydantic
 scikit-learn==1.2.2
-scipy
 
 
