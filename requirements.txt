@@ -34,7 +34,7 @@ Markdown==3.4.4
 MarkupSafe==2.1.3
 mccabe==0.7.0
 nltk==3.8.1
-numpy==1.25.2
+numpy
 oauthlib==3.2.2
 opt-einsum==3.3.0
 packaging==23.1
