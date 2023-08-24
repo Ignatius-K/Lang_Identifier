@@ -32,4 +32,3 @@ async def detect(req_body: RequestBody):
 __all__ = [
     "router"
 ]
-

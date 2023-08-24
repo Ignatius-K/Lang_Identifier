@@ -33,7 +33,7 @@ class Model:
             with open(model_path, 'rb') as _model:
                 self.model = pickle.load(_model)
 
-        except pickle.UnpicklingError as e:
+        except pickle.UnpicklingError:
             self.model = joblib.load(model_path)
 
         finally:
@@ -63,6 +63,7 @@ class Model:
         self.text = cv.transform([text]).toarray()
 
     def predict(self):
+
         self.predicted = self.model.predict(self.text)[0]
 
 
