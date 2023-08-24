@@ -29,17 +29,20 @@ class ResponseBody(BaseModel):
 async def detect(req_body: RequestBody):
     model_response = model.detect_language(text=req_body.text)
 
-    with local_session() as db:
-        db.add(models.Log(
-            text=req_body.text,
-            lang=model_response
-        ))
-        db.commit()
-
-    return ResponseBody(
-        lang=model_response,
-        # acc=model_response.acc
-    )
+    try:
+        with local_session() as db:
+            db.add(models.Log(
+                text=req_body.text,
+                lang=model_response
+            ))
+            db.commit()
+    except Exception as e:
+        print(e)
+    finally:
+        return ResponseBody(
+            lang=model_response,
+            # acc=model_response.acc
+        )
 
 
 __all__ = [

@@ -60,11 +60,6 @@ six
 sniffio
 SQLAlchemy
 starlette
-tensorboard
-tensorboard-data-server
-tensorflow
-tensorflow-estimator
-tensorflow-io-gcs-filesystem
 termcolor
 threadpoolctl
 tomli
